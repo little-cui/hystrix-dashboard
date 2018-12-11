@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ${HYSTRIX_NAME:hystrixdashboard}
+  cloud:
+    config:
+      discovery:
+        enabled: ${CONFIG_SERVER_DISCOVERY_ENABLED:true}
+        service-id: ${CONFIG_SERVER_NAME:configserver-test}
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://119.3.202.87:8761/eureka/}
+    enabled: ${EUREKA_ENABLED:true}
+
+server:
+  port: ${HYSTRIX_PORT:7979}
